@@ -1,0 +1,315 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Kachurovskaya Portfolio</title>
+    <link href='http://fonts.googleapis.com/css?family=Days+One' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="test.css">
+   <script src="http://code.jquery.com/jquery-1.8.2.min.js" type="text/javascript"></script>
+		<script src="jquery.carouFredSel-6.0.4-packed.js" type="text/javascript"></script>
+		<script type="text/javascript">
+
+   $(function() {
+	var left = {
+		imgFront	: -450,
+		imgBack		: -350,
+		h3			: -300,
+		p			: -275,
+		a			: -200
+	}
+	var current = {
+		imgFront	: 30,
+		imgBack		: 300,
+		h3			: 675,
+		p			: 675,
+		a			: 700
+	}
+	var right = {
+		imgFront	: 990,
+		imgBack		: 990,
+		h3			: 990,
+		p			: 990,
+		a			: 990
+	}
+	
+	var isScrolling = false;
+ 
+	$('#carousel').carouFredSel({
+		scroll	: {
+			duration		: 0,
+			timeoutDuration	: 3000
+		},
+		auto	: false,
+		prev	: {
+			button		: '#prev',
+			conditions	: function() {
+				return (!isScrolling);
+			},
+			onBefore	: function( data ) {
+				isScrolling = true;
+ 
+				$(this).delay(900);
+ 
+				data.items.old.find('img.img-front')
+					.delay(400)
+					.animate({
+						left: right.imgFront
+					});
+ 
+				data.items.old.find('img.img-back')
+					.delay(300)
+					.animate({
+						left: right.imgBack
+					});
+ 
+				data.items.old.find('h3')
+					.delay(200)
+					.animate({
+						left: right.h3
+					});
+ 
+				data.items.old.find('p')
+					.delay(100)
+					.animate({
+						left: right.p
+					});
+ 
+				data.items.old.find('a')
+					.animate({
+						left: right.a
+					});
+			},
+			onAfter: function( data ) {
+				data.items.old.find('img.img-front')
+					.css({
+						left: current.imgFront
+					});
+ 
+				data.items.old.find('img.img-back')
+					.css({
+						left: current.imgBack
+					});
+ 
+				data.items.old.find('h3')
+					.animate({
+						left: current.h3
+					});
+ 
+				data.items.old.find('p')
+					.css({
+						left: current.p
+					});
+ 
+				data.items.old.find('a')
+					.css({
+						left: current.a
+					});
+ 
+				data.items.visible.find('img.img-front')
+					.css({
+						left: left.imgFront
+					}).delay(400)
+					.animate({
+						left: current.imgFront
+					}, function() {
+						isScrolling = false;
+					});
+ 
+				data.items.visible.find('img.img-back')
+					.css({
+						left: left.imgBack
+					}).delay(300)
+					.animate({
+						left: current.imgBack
+					});
+ 
+				data.items.visible.find('h3')
+					.css({
+						left: left.h3
+					}).delay(200)
+					.animate({
+						left: current.h3
+					});
+ 
+				data.items.visible.find('p')
+					.css({
+						left: left.p
+					}).delay(100)
+					.animate({
+						left: current.p
+					});
+ 
+				data.items.visible.find('a')
+					.css({
+						left: left.a
+					})
+					.animate({
+						left: current.a
+					});
+			}
+		},
+		next	: {
+			button		: '#next',
+			conditions	: function() {
+				return (!isScrolling);
+			},
+			onBefore	: function( data ) {
+				isScrolling = true;
+ 
+				$(this).delay(900);	//	delay the onafter
+ 
+				data.items.old.find('img.img-front')
+					.animate({
+						left: left.imgFront
+					});
+ 
+				data.items.old.find('img.img-back')
+					.delay(100)
+					.animate({
+						left: left.imgBack
+					});
+ 
+				data.items.old.find('h3')
+					.delay(200)
+					.animate({
+						left: left.h3
+					});
+ 
+				data.items.old.find('p')
+					.delay(300)
+					.animate({
+						left: left.p
+					});
+ 
+				data.items.old.find('a')
+					.delay(400)
+					.animate({
+						left: left.a
+					});
+			},
+			onAfter: function( data ) {
+				data.items.old.find('img.img-front')
+					.css({
+						left: current.imgFront
+					});
+ 
+				data.items.old.find('img.img-back')
+					.css({
+						left: current.imgBack
+					});
+ 
+				data.items.old.find('h3')
+					.animate({
+						left: current.h3
+					});
+ 
+				data.items.old.find('p')
+					.css({
+						left: current.p
+					});
+ 
+				data.items.old.find('a')
+					.css({
+						left: current.a
+					});
+ 
+				data.items.visible.find('img.img-front')
+					.css({
+						left: right.imgFront
+					})
+					.animate({
+						left: current.imgFront
+					});
+ 
+				data.items.visible.find('img.img-back')
+					.css({
+						left: right.imgBack
+					}).delay(100)
+					.animate({
+						left: current.imgBack
+					});
+ 
+				data.items.visible.find('h3')
+					.css({
+						left: right.h3
+					}).delay(200)
+					.animate({
+						left: current.h3
+					});
+ 
+				data.items.visible.find('p')
+					.css({
+						left: right.p
+					}).delay(300)
+					.animate({
+						left: current.p
+					});
+ 
+				data.items.visible.find('a')
+					.css({
+						left: right.a
+					}).delay(400)
+					.animate({
+						left: current.a
+					}, function() {
+						isScrolling = false;
+					});
+			}
+		}
+	});
+});</script>
+</head>
+
+<body>
+<div id="menu">
+		<img src="images/logo1.png" width="266" height="70"><a href="index.html" class="portfolio">portfolio</a>
+		<a href="about.html" class="about">about</a>
+		<a href="contact.html" class="contact">contact</a>
+	</div>
+	
+<div id="wrapper">
+	<div id="bg"></div>
+	<div id="carousel">
+    <div>
+			<img class="img-front" src="slides/website.png" alt="dot1" width="450" height="350" />
+            <img class="img-back" src="slides/website_back.png" alt="dot2" width="350" height="275" />
+			<h3>Website design</h3>
+			<p>Portfolio site for photographer Liubov Piskunova</p>
+			<a href="http://l.kachurovskiy.com/" target="_blank" style="left: 700px;">Go to site</a>
+		</div>
+        <div>
+			<img class="img-front" src="slides/flash_game.png" alt="val1" width="auto" height="350" />
+			<img class="img-back" src="slides/game_layout.png" alt="val2" width="350" height="275" />
+			<h3>Game design</h3>
+			<p>Flash dress up game</p>
+			<a href="game/game.html" target="_blank">Play the game</a>
+		</div>
+		<div>
+			<img class="img-front" src="slides/drawing.png" alt="dot1" width="450" height="350" />
+            <img class="img-back" src="slides/drawing_back.png" alt="dot2" width="350" height="275" />
+			<h3>Digital painting</h3>
+			<p>Digital art projects</p>
+			<a href="http://dotdotdot.frebsite.nl" target="_blank"></a>
+		</div>
+		<div>
+			<img class="img-front" src="slides/olive.png" alt="dot1" width="auto" height="350" />
+            <img class="img-back" src="slides/poster.png" alt="dot2" width="auto" height="275" />
+			<h3>Poster design</h3>
+			<p>Custom design for print</p>
+			<a href="http://dotdotdot.frebsite.nl" target="_blank"></a>
+		</div>
+        <div>
+			<img class="img-front" src="slides/marketing.jpg" alt="val1" width="auto" height="350" />
+			<img class="img-back" src="slides/brochure_layout.png" alt="val2" width="350" height="275" />
+			<h3>Brochure design</h3>
+			<p>Marketing materials for System Separation Sweden AB</p>
+			<a href="http://validval.frebsite.nl" target="_blank"></a>
+		</div>
+	</div>
+	<a id="prev" href="#"><span></span></a>
+	<a id="next" href="#"><span></span></a>
+</div></div>
+	<div id="footer">Copyright © Liudmila Kachurovskaya</div>
+
+</body>
+</html>

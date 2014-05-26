@@ -1,0 +1,280 @@
+@charset "utf-8";
+@charset "utf-8";
+/* CSS Document */
+html, body {
+	margin: 0;
+    padding: 0;
+    color: black;
+    font-family: 'Days One', sans-serif;
+	font-weight: 100%; 
+    height: 100%;
+    background-image: url('background300.jpg');
+	background-repeat: repeat;
+}
+
+a:link {
+	color: #648e92;
+	
+}
+a:visited {
+	color: #128b91;
+}
+a:hover {
+	color: #128b91;
+}
+
+#header {
+    width: 100%;
+	background-color: black;
+}
+
+#logo {
+	width: 60%;
+	margin: 0 auto; 
+}
+
+#menu {
+    width: 100%;
+    min-height: 80px;
+	text-align: center;
+    padding: 20px 0 20px 0;
+	background-color: black;
+	clear: left;
+}
+#menu a {
+	display: inline-block;
+    min-width: 110px;
+    margin: 10px;
+    padding: 10px;
+    font-size: 100%;
+    text-decoration: none;
+    color: #648e92;
+  
+}
+#menu a.portfolio:active,
+#menu a.portfolio:hover {
+	color: #e85551;
+}
+
+#menu a.about:active,
+#menu a.about:hover {
+	color: #e85551;
+}
+
+#menu a.contact:active,
+#menu a.contact:hover {
+	color: #e85551; 
+}
+#content {
+    width: 60%;
+    height: auto;
+    margin: 0 auto;
+	padding: 40px 0 40px 0;
+	position: relative;
+}
+.content-narrow {
+	max-width: 600px;
+}
+#about {
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+	font-weight: 120%;
+	text-align: justify;
+}
+#about img {
+	float: left;
+	margin: 0 30px 20px 0;
+}
+#form {
+	width: 100%;
+	height: auto;
+	
+}
+
+#social {
+	width: 80px;
+	position: absolute;
+	right: -120px;
+	top: 100px;
+}
+.menu-social {
+	width: 37px;
+	height: 37px;
+	background-repeat: no-repeat;
+	display: inline-block;
+	
+}
+	
+.button-facebook {
+	background-image: url('images/social/facebook1.png');
+}
+.button-facebook:hover {
+	background-image: url('images/social/facebook2.png');
+}
+
+.button-instagram {
+	background-image: url('images/social/instagram1.png');
+}
+.button-instagram:hover {
+	background-image: url('images/social/instagram2.png');
+}
+.button-pinterest {
+	background-image: url('images/social/pinterest1.png');
+}
+.button-pinterest:hover {
+	background-image: url('images/social/pinterest2.png');
+}
+
+label {
+    display:block;
+    letter-spacing:2px;
+}
+
+.body {
+    display:block;
+    margin:0 auto;
+    width:576px;
+	
+}
+.info {
+	text-align: left;
+	font-size: 18px; 
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+}
+
+#footer {
+   position: fixed;
+   bottom: 0;
+   width:100%;
+   background: black;
+   height: 40px; 
+   text-align: center;
+   color: #648e92;
+   font-family:  Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+}
+
+#wrapper, #carousel, #carousel > div {
+	width: 990px;
+	height: 350px;
+}
+ 
+#wrapper {
+	margin: 100px 0 0 -450px;
+	overflow: hidden;
+	position: absolute;
+	left: 50%;
+}
+#bg {
+	background-color: none;
+	width: 990px;
+	height: 270px;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	border-radius: 10px;
+}
+#carousel {
+	position: relative;
+	z-index: 2;
+}
+#carousel div {
+	position: relative;
+	float: left;
+}
+#carousel div > * {
+	position: absolute;
+}
+#carousel img.img-front {
+	left: 30px;
+	top: 0;
+	z-index: 4;
+}
+#carousel img.img-back {
+	left: 300px;
+	top: 50px;
+	z-index: 3;
+}
+#carousel h3 {
+	font-size: 20px;
+	font-weight: 100;
+	color: #648e92;
+	width: 300px;
+	left: 675px;
+	top: 110px;
+	margin: 0;
+}
+#carousel p {
+	color: #666;
+	font-size: 16px;
+	width: 275px;
+	left: 675px;
+	top: 150px;
+	margin: 0;
+}
+/*#carousel a {
+	color: #fff;
+	font-size: 18px;
+	text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+	text-decoration: none;
+	text-align: center;
+	line-height: 40px;
+	outline: none;
+	display: block;
+	background-color: #888;
+	border: 1px solid #666;
+	width: 175px;
+	height: 40px;
+	left: 700px;
+	top: 260px;
+	
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+	background-image: -moz-linear-gradient(bottom, #666 25%, #888 75%);
+	background-image: -webkit-linear-gradient(bottom, #666 25%, #888 75%);
+	background-image: -ms-linear-gradient(bottom, #666 25%, #888 75%);
+	background-image: linear-gradient(bottom, #666 25%, #888 75%);
+}*/
+#carousel a:hover {
+	background-color: black;
+}
+ 
+#prev, #next {
+	background-color: black;
+	display: block;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 110px;
+	z-index: 10;
+	border-radius: 25px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.4);
+}
+#prev span, #next span {
+	border-top: 6px solid transparent;
+	border-bottom: 6px solid transparent;
+	display: block;
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: 19px;
+}
+#prev {
+	left: -25px;
+}
+#prev span {
+	border-right: 10px solid #648e92;
+	left: 25px;
+}
+#prev:hover span {
+	border-right-color: #999;
+}
+#next {
+	right: -25px;
+}
+#next span {
+	border-left: 10px solid #648e92;
+	right: 25px;
+}
+#next:hover span {
+	border-left-color: #999;
+}
